@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SAF YouTube iFrame API by mihau.co</title>
+    <link rel="stylesheet" type="text/css" href="./demo.css">
+  </head>
+  <body>
+    <header>
+      <h1>Simple As F* YouTube iFrame API</h1>
+      <p><small>* use your favourite <i>F</i>-word</small></p>
+      <p>by <a href="http://mihau.co">mihau.co</a></p>
+    </header>
+    <main>
+      <iframe
+        id="youtube-iframe"
+        src="https://www.youtube-nocookie.com/embed/YlWQdP4Pmz8?enablejsapi=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      >
+      </iframe>
+      <div class="controls">
+        <button id="play">Play</button>
+        <button id="pause">Pause</button>
+      </div>
+      <div class="commands">
+        <select id="commands">
+          <option disabled selected>Select command</option>
+          <option value="playVideo">Play</option>
+          <option value="pauseVideo">Pause</option>
+        </select>
+        <button id="run-command" disabled>Run</button>
+      </div>
+    </main>
+    <script src="/demo.js" type="module"></script>
+  </body>
+</html>

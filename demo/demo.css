@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: sans-serif;
+}
+
+main, header, footer {
+  max-width: 100%;
+  width: 590px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+}
+
+#youtube-iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
