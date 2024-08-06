@@ -1,6 +1,6 @@
-import SAFYouTubeIFrameAPI from './SAFYouTubeIFrameAPI';
+import YouTubeIFrameCtrl from './YouTubeIFrameCtrl';
 
-describe('SAFYouTubeIFrameAPI', () => {
+describe('YouTubeIFrameCtrl', () => {
   let iframe: HTMLIFrameElement;
 
   beforeEach(() => {
@@ -15,13 +15,13 @@ describe('SAFYouTubeIFrameAPI', () => {
   });
 
   test('should initialize correctly with an iframe element', () => {
-    const api = new SAFYouTubeIFrameAPI(iframe);
-    expect(api).toBeInstanceOf(SAFYouTubeIFrameAPI);
+    const api = new YouTubeIFrameCtrl(iframe);
+    expect(api).toBeInstanceOf(YouTubeIFrameCtrl);
   });
 
   test('should throw error if element not found by selector', () => {
     expect(() => {
-      new SAFYouTubeIFrameAPI('#nonexistent');
+      new YouTubeIFrameCtrl('#nonexistent');
     }).toThrow('Element not found: #nonexistent');
   });
 
@@ -31,14 +31,14 @@ describe('SAFYouTubeIFrameAPI', () => {
 
     expect(() => {
       // @ts-expect-error
-      new SAFYouTubeIFrameAPI(div);
+      new YouTubeIFrameCtrl(div);
     }).toThrow('Element is not an iframe');
 
     document.body.removeChild(div);
   });
 
   test('should resolve loaded promise when iframe is ready', async () => {
-    const api = new SAFYouTubeIFrameAPI(iframe);
+    const api = new YouTubeIFrameCtrl(iframe);
 
     // Simulate iframe load event
     const loadEvent = new Event('load');

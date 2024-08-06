@@ -1,7 +1,7 @@
 {
-  "name": "saf-youtube-iframe-api",
+  "name": "youtube-iframe-ctrl",
   "version": "0.1.0",
-  "description": "",
+  "description": "Simple YouTube iFrame controller with no additional dependencies and no YouTube iFrame API script.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
@@ -9,11 +9,11 @@
     "clean": "rimraf dist",
     "watch": "npm run clean && tsc -w",
     "build": "npm run clean && tsc",
-    "build-demo": "npm run build && cp dist/SAFYouTubeIFrameAPI.js demo/SAFYouTubeIFrameAPI.js",
+    "build-demo": "npm run build && cp dist/YouTubeIFrameCtrl.js demo/YouTubeIFrameCtrl.js",
     "serve-demo": "npm run build-demo && http-server demo",
     "test": "jest"
   },
-  "keywords": [],
+  "keywords": [ "youtube", "iframe", "controller", "api" ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
