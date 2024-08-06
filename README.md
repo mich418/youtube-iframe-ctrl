@@ -72,29 +72,69 @@ play()
 
 ## Methods
 
-### `async command(command: string, args?: any[]): Promise<void>`
-
-Sends a command to the YouTube player.
-
 ### `async play(): Promise<void>`
 
-Plays the video.
+Plays the video. Under the hood it uses `command()` method.
+
+Example:
+
+```js
+youTubeIFrameCtrl.play()
+```
 
 ### `async pause(): Promise<void>`
 
-Pauses the video.
+Pauses the video. Under the hood it uses `command()` method.
+
+Example:
+
+```js
+youTubeIFrameCtrl.pause()
+```
 
 ### `async stop(): Promise<void>`
 
-Stops the video.
+Stops the video. Under the hood it uses `command()` method.
+
+Example:
+
+```js
+youTubeIFrameCtrl.stop()
+```
 
 ### `async mute(): Promise<void>`
 
-Mutes the video.
+Mutes the video. Under the hood it uses `command()` method.
+
+Example:
+
+```js
+youTubeIFrameCtrl.mute()
+```
 
 ### `async unMute(): Promise<void>`
 
-Unmutes the video.
+Unmutes the video. Under the hood it uses `command()` method.
+
+Example:
+
+```js
+youTubeIFrameCtrl.unmute()
+```
+
+### `async command(command: string, args?: any[]): Promise<void>`
+
+Sends a command to the YouTube player. `command` argument can be a name of any command accepted by YouTube iFrame player API, below you'll find a list of all know commands (it's based on my foundings after studing some YouTube player JS source files):
+
+| Command | Arguments | Info |
+|---------|-----------|------|
+| `play` | - | Play video (you can use play method of YouTube iFrame Controller instead) |
+| `pause` | - | Pause video (you can use pause method of YouTube iFrame Controller instead) |
+| `stop` | - | Stop video (you can use stop method of YouTube iFrame Controller instead) |
+| `mute` | - | Mute video (you can use mute method of YouTube iFrame Controller instead) |
+| `unMute` | - | Unmute video (you can use unMute method of YouTube iFrame Controller instead) |
+| `seekTo` | `seconds: number, allowSeekAhead: boolean` | Seek to a specified time in seconds |
+| `setVolume` | `volume: number` | Set the volume (0-100) |
 
 ## Properties
 
