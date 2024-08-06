@@ -3,9 +3,9 @@
 Simple YouTube iFrame controller __with no additional dependencies and no YouTube iFrame API script__.
 
 ---
-**Toss A Coin To Your Developer**
+**BETA WARNING**
 
-Fell free to use this package for free. If it helped you somehow and you would like to spare me some change for a coffee, you can do so via [buymeacoffee.com](https://www.buymeacoffee.com/mihauco) or [buycoffee.to](https://buycoffee.to/mihau.co). Thanks in advance!
+This package is still in BETA. It should work properly and will hopefully become stable soon, but anyway -  you have been warned.
 
 ---
 
