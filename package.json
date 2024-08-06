@@ -1,0 +1,29 @@
+{
+  "name": "saf-youtube-iframe-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf dist",
+    "watch": "npm run clean && tsc -w",
+    "build": "npm run clean && tsc",
+    "build-demo": "npm run build && cp dist/SAFYouTubeIFrameAPI.js demo/SAFYouTubeIFrameAPI.js",
+    "serve-demo": "npm run build-demo && http-server demo",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "http-server": "14.1.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jsdom": "^24.1.1",
+    "rimraf": "6.0.1",
+    "ts-jest": "^29.2.4",
+    "typescript": "5.5.4"
+  }
+}
