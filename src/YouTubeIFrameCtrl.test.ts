@@ -70,6 +70,21 @@ describe('YouTubeIFrameCtrl', () => {
     await expect(api.loaded).resolves.toBe(true);
   });
 
+  test('should return correct playerstate', async () => {
+    expect(api.playerState).toBe('NOT_READY');
+
+    loadYouTube();
+
+    const messageEvent = new MessageEvent('message', {
+      source: iframe.contentWindow,
+      data: JSON.stringify({ info: { playerState: -1 } })
+    });
+
+    window.dispatchEvent(messageEvent);
+
+    expect(api.playerState).toBe('UNSTARTED');
+  })
+
   test('should send postMessage to iframe when command method is called', async () => {
     const postMessageSpy = jest.spyOn(iframe.contentWindow!, 'postMessage');
 
