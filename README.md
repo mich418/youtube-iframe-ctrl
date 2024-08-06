@@ -17,25 +17,48 @@ Simple YouTube iFrame controller __with no additional dependencies and no YouTub
 To install the YouTubeIFrameCtrl you can use npm:
 
 ```sh
-npm install youtube-iframe-ctrl
+npm install youtube-iframe-ctrl@1.0.0-beta
 ```
 
 ## Usage
 
 Here's an example of how to use the YouTubeIFrameCtrl:
 
+Add iframe to your page / html.
+
+---
+**IMPORTANT NOTE:**
+
+You __must__ add `enablejsapi=1` query parameter to YouTube url - otherwise iFrame controller will not work.
+
+---
+
+```html
+<iframe
+  id="youtube-iframe"
+  src="https://www.youtube-nocookie.com/embed/jNQXAC9IVRw?enablejsapi=1"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+>
+</iframe>
+
+```
+
 ```js
 import YouTubeIFrameCtrl from 'youtube-iframe-ctrl';
 
 // Assuming you have an iframe element with id 'youtube-iframe'
-const iframe = document.getElementById('youtube-iframe');
-const ytIfCtrl = new YouTubeIFrameCtrl(iframe);
+const iframeElement = document.getElementById('youtube-iframe');
+const youTubeIFrameCtrl = new YouTubeIFrameCtrl(iframe);
 
 async function play() {
   // Mute video
-  await ytIfCtrl.mute()
+  await youTubeIFrameCtrl.mute()
   // Play video
-  await ytIfCtrl.play()
+  await youTubeIFrameCtrl.play()
 }
 
 play()

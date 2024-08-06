@@ -3,7 +3,8 @@ type PlayerStateCode = -2 | -1 | 0 | 1 | 2 | 3 | 5
 export default class YouTubeIFrameCtrl {
   private errors = [
     'Element not found',
-    'Element is not an iframe'
+    'Element is not an iframe',
+    'Youtube url does not include query parameter - enablejsapi=1 - JS API is disabled'
   ];
 
   private playerStates: {[code in PlayerStateCode]: string} = {
@@ -39,6 +40,10 @@ export default class YouTubeIFrameCtrl {
       this.iframe = element
     } else {
       this.throwError(1)
+    }
+
+    if (!this.iframe.src.includes('enablejsapi=1')) {
+      this.throwError(2, this.iframe.src)
     }
 
     this.loaded = new Promise(resolve => {

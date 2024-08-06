@@ -8,6 +8,7 @@ describe('YouTubeIFrameCtrl', () => {
   beforeEach(() => {
     // Create a mock iframe element
     iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube.com/embed/v1d3o1d?enablejsapi=1'
     document.body.appendChild(iframe);
     api = new YouTubeIFrameCtrl(iframe);
     commandSpy = jest.spyOn(api, 'command');
@@ -52,6 +53,14 @@ describe('YouTubeIFrameCtrl', () => {
     }).toThrow('Element is not an iframe');
 
     document.body.removeChild(div);
+  });
+
+  test('should throw error if iframe src does not include "enablejsapi=1"', () => {
+    iframe.src = 'https://www.youtube.com/embed/v1d3o1d';
+
+    expect(() => {
+      new YouTubeIFrameCtrl(iframe);
+    }).toThrow('Youtube url does not include query parameter - enablejsapi=1 - JS API is disabled: https://www.youtube.com/embed/v1d3o1d');
   });
 
   test('should resolve loaded promise when iframe is ready', async () => {
