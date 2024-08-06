@@ -2,6 +2,13 @@
 
 Simple YouTube iFrame controller __with no additional dependencies and no YouTube iFrame API script__.
 
+---
+**Toss A Coin To Your Developer**
+
+Fell free to use this package for free. If it helped you somehow and you would like to spare me some change for a coffee, you can do so via [buymeacoffee.com](https://www.buymeacoffee.com/mihauco) or [buycoffee.to](https://buycoffee.to/mihau.co). Thanks in advance!
+
+---
+
 [The official YouTube documentation](https://developers.google.com/youtube/iframe_api_reference) requires you to add an external script to your page and create an iFrame with JavaScript to control the player inside the iFrame. This can be complicated if you only want to perform simple actions. Most packages available on NPM are just wrappers for the official YouTube script (downloading it under the hood and exposing the same API). __This module does not require the official YouTube iFrame API script or any other dependencies__. It contains just a few lines of code and provides all the functionalities of the official API.
 
 ## Table of Contents
@@ -44,7 +51,6 @@ You __must__ add `enablejsapi=1` query parameter to YouTube url - otherwise iFra
   allowfullscreen
 >
 </iframe>
-
 ```
 
 ```js
