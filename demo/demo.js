@@ -1,20 +1,21 @@
-import SAFYouTubeIFrameAPI from './SAFYouTubeIFrameAPI.js'
+import YouTubeIFrameCtrl from './YouTubeIFrameCtrl.js'
 const youtubeIFrame = document.getElementById('youtube-iframe')
-const safYouTubeIFrameAPI = new SAFYouTubeIFrameAPI(youtubeIFrame)
+const youTubeIFrameCtrl = new YouTubeIFrameCtrl(youtubeIFrame)
 
 youtubeIFrame.contentWindow.dispatchEvent(new Event('click'))
 
 async function play() {
-  await safYouTubeIFrameAPI.mute()
-  await safYouTubeIFrameAPI.play()
+  await youTubeIFrameCtrl.mute()
+  await youTubeIFrameCtrl.play()
+  console.log(youTubeIFrameCtrl.playerState)
 }
 
 play()
 
 document.getElementById('play').addEventListener('click', () => {
-  safYouTubeIFrameAPI.play()
+  youTubeIFrameCtrl.play()
 })
 
 document.getElementById('pause').addEventListener('click', () => {
-  safYouTubeIFrameAPI.pause()
+  youTubeIFrameCtrl.pause()
 })

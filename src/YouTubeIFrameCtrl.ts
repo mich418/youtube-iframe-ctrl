@@ -1,6 +1,6 @@
 type PlayerStateCode = -2 | -1 | 0 | 1 | 2 | 3 | 5
 
-export default class SAFYouTubeIFrameAPI {
+export default class YouTubeIFrameCtrl {
   private errors = [
     'Element not found',
     'Element is not an iframe'
@@ -89,7 +89,7 @@ export default class SAFYouTubeIFrameAPI {
 
   private stateChangeHandler(playerStateCode: PlayerStateCode): void {
     this.currentPlayerStateCode = playerStateCode
-    const event = new CustomEvent('ytstatechange', { detail: this.playerState })
+    const event = new CustomEvent('ytstatechange', { detail: this.playerStates[this.currentPlayerStateCode] })
     this.iframe.dispatchEvent(event)
   }
 

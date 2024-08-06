@@ -1,2 +1,2 @@
-import SAFYouTubeIFrameAPI from "./SAFYouTubeIFrameAPI";
-export default SAFYouTubeIFrameAPI;
+import YouTubeIFrameCtrl from "./YouTubeIFrameCtrl";
+export default YouTubeIFrameCtrl;
