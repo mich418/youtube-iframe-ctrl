@@ -6,20 +6,76 @@ body, html {
   font-family: sans-serif;
 }
 
-main, header, footer {
-  max-width: 100%;
-  width: 590px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 0 auto;
-}
-
-header {
+/* header {
   text-align: center;
-}
+} */
 
 #youtube-iframe {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
+}
+
+.commands {
+  margin-top: 1rem;
+}
+
+.commands > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 561px) {
+  .commands > div {
+    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .commands .command-select {
+    grid-column: 1;
+  }
+  
+  .commands .command-args {
+    grid-column: 2;
+  }
+  
+  .commands .command-actions {
+    grid-column: 3;
+  }
+}
+
+.commands .command-actions button {
+  display: block;
+  width: 100%;
+}
+
+.commands .command-select select,
+.commands .command-args input {
+  width: 100%;
+}
+
+.commands .command-select *:last-child,
+.commands .command-args *:last-child,
+.commands .command-actions *:last-child {
+  margin-bottom: 0;
+}
+
+
+pre {
+  font-size: 14px;
+}
+
+.examples pre:first-child {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
+}
+
+.examples pre:not(:first-child) {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: 0;
 }

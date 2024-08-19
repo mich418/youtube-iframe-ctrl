@@ -3,3 +3,4 @@ src/
 .editorconfig
 tsconfig.json
 jest.config.js
+fixExtension.js

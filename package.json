@@ -1,6 +1,6 @@
 {
   "name": "youtube-iframe-ctrl",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0",
   "description": "Simple YouTube iFrame controller with no additional dependencies and no YouTube iFrame API script.",
   "author": "mihauco <github@mihau.co> (https://mihau.co)",
   "funding": "https://www.buymeacoffee.com/mihauco",
@@ -8,7 +8,12 @@
     "type": "git",
     "url": "git+https://github.com/mihauco/youtube-iframe-ctrl.git"
   },
-  "keywords": [ "youtube", "iframe", "controller", "api" ],
+  "keywords": [
+    "youtube",
+    "iframe",
+    "controller",
+    "api"
+  ],
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,13 +21,15 @@
   "scripts": {
     "clean": "rimraf dist",
     "watch": "npm run clean && tsc -w",
-    "build": "npm run clean && tsc",
+    "build": "npm run clean && tsc && node fixExtension.js",
     "build-demo": "npm run build && cp dist/YouTubeIFrameCtrl.js demo/YouTubeIFrameCtrl.js",
     "serve-demo": "npm run build-demo && http-server demo",
+    "deploy-demo": "npm run build-demo && gh-pages -d demo",
     "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
+    "gh-pages": "^6.1.1",
     "http-server": "14.1.1",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",

@@ -109,7 +109,7 @@ export default class YouTubeIFrameCtrl {
     this.iframe.contentWindow?.postMessage(JSON.stringify({
       event: 'command',
       func: command,
-      args: args?.join(',') || ''
+      args: args || []
     }), '*')
   }
 
