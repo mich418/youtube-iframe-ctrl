@@ -1,6 +1,6 @@
 {
   "name": "youtube-iframe-ctrl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple YouTube iFrame controller with no additional dependencies and no YouTube iFrame API script.",
   "author": "mihauco <github@mihau.co> (https://mihau.co)",
   "funding": "https://www.buymeacoffee.com/mihauco",

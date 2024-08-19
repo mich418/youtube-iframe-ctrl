@@ -7,7 +7,7 @@ Demo with examples: [youtube-iframe-ctrl.mihau.co](https://youtube-iframe-ctrl.m
 ---
 **Toss a Coin to Your Developer**
 
-If you this package helped you and you would like to spare me some change - you can do it via buymeacoffee.com or buycoffee.to.
+If you this package helped you and you would like to spare me some change - you can do it via [buymeacoffee.com](https://buymeacoffee.com/mihauco) or [buycoffee.to](https://buycoffee.to/mihau.co).
 
 ---
 
