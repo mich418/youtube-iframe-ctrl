@@ -27,7 +27,7 @@ If you this package helped you and you would like to spare me some change - you 
 To install the YouTubeIFrameCtrl you can use npm:
 
 ```sh
-npm install youtube-iframe-ctrl@1.0.0-beta
+npm install youtube-iframe-ctrl
 ```
 
 
