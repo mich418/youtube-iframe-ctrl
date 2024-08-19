@@ -2,10 +2,12 @@
 
 Simple YouTube iFrame controller __with no additional dependencies and no YouTube iFrame API script__.
 
----
-**BETA WARNING**
+Demo with examples: [youtube-iframe-ctrl.mihau.co](https://youtube-iframe-ctrl.mihau.co)
 
-This package is still in BETA. It should work properly and will hopefully become stable soon, but anyway -  you have been warned.
+---
+**Toss a Coin to Your Developer**
+
+If you this package helped you and you would like to spare me some change - you can do it via buymeacoffee.com or buycoffee.to.
 
 ---
 
@@ -18,6 +20,7 @@ This package is still in BETA. It should work properly and will hopefully become
 - Methods
 - Properties
 - Events
+- Quick note about autoplay
 
 ## Installation
 
@@ -26,6 +29,8 @@ To install the YouTubeIFrameCtrl you can use npm:
 ```sh
 npm install youtube-iframe-ctrl@1.0.0-beta
 ```
+
+
 
 ## Usage
 
@@ -74,7 +79,7 @@ play()
 
 ### `async play(): Promise<void>`
 
-Plays the video. Under the hood it uses `command()` method.
+Plays the video. Under the hood it uses `command()` method. __IMPORTANT!__ If you would like autoplay a video it must be muted first! More info at the end of readme.
 
 Example:
 
@@ -167,3 +172,7 @@ iframeElement.addEventListener('ytmessage', (event) => {
   console.log('Message sent from youtube player:', event.detail);
 });
 ```
+
+# Quick note about autoplay
+
+YouTube does not allow unmuted videos to autoplay without user interaction (likely using [UserActivation](https://developer.mozilla.org/en-US/docs/Web/API/UserActivation) to check if user interacted with the page, though I haven't confirmed it). If you want to play a YouTube video on page load, it must be muted first.

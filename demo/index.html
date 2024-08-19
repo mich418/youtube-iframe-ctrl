@@ -2,12 +2,13 @@
 <html>
   <head>
     <title>YouTube iFrame Controller</title>
-    <link rel="stylesheet" type="text/css" href="./demo.css">
+    <link rel="stylesheet" type="text/css" href="/simple.min.css">
+    <link rel="stylesheet" type="text/css" href="/demo.css">
   </head>
   <body>
     <header>
       <h1>YouTube iFrame Controller</h1>
-      <p>by <a href="http://mihau.co">mihau.co</a></p>
+      <p>by <a href="http://mihau.co" target="_blank">mihau.co</a> / repo: <a href="https://github.com/mihauco/youtube-iframe-ctrl" target="_blank">Github</a></p>
     </header>
     <main>
       <iframe
@@ -20,17 +21,104 @@
         allowfullscreen
       >
       </iframe>
-      <div class="controls">
-        <button id="play">Play</button>
-        <button id="pause">Pause</button>
-      </div>
-      <div class="commands">
-        <select id="commands">
-          <option disabled selected>Select command</option>
-          <option value="playVideo">Play</option>
-          <option value="pauseVideo">Pause</option>
-        </select>
-        <button id="run-command" disabled>Run</button>
+      <article class="commands">
+        <div>
+          <div class="command-select">
+            <select id="commands">
+              <option disabled selected>Select command</option>
+              <option value="playVideo">Play</option>
+              <option value="pauseVideo">Pause</option>
+              <option value="mute">Mute</option>
+              <option value="unMute">Unmute</option>
+              <option
+                value="seekTo"
+                data-args='[{"type": "number", "placeholder": "Time in seconds"}]'
+              >
+                Seek to
+              </option>
+              <option
+                value="setVolume"
+                data-args='[{"type": "number", "placeholder": "Volume level (0-100)"}]'
+              >
+                Set volume
+              </option>
+            </select>
+          </div>
+          <div class="command-args">
+            <div id="command-args">
+              
+            </div>
+          </div>
+          <div class="command-actions">
+            <button id="run-command" disabled>Run</button>
+          </div>
+        </div>
+      </article>
+      <div class="examples">
+
+<!-- EXAMPLES -->
+<pre class="code-base">
+// HTML
+&lt;iframe
+  id="youtube-iframe"
+  src="https://www.youtube-nocookie.com/embed/your_video_id?enablejsapi=1"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+&gt;
+&lt;/iframe&gt;
+
+// JavaScript
+import { YouTubeIFrameCtrl } from './YouTubeIFrameCtrl.js';
+
+const youTubeIFrame = document.getElementById('youtube-iframe')
+const youTubeIFrameCtrl = new YouTubeIFrameCtrl(youTubeIFrame)
+</pre>
+<pre data-command="disabled">
+// select command to see example code
+</pre>
+<pre data-command="playVideo" style="display: none;">
+// you can use bult in method...
+youTubeIFrameCtrl.play()
+
+// ...or command method
+youTubeIFrameCtrl.command('playVideo')
+</pre>
+<pre data-command="pauseVideo" style="display: none;">
+// you can use bult in method...
+youTubeIFrameCtrl.pause()
+
+// ...or command method
+youTubeIFrameCtrl.command('pauseVideo')
+</pre> 
+<pre data-command="mute" style="display: none;">
+// you can use bult in method...
+youTubeIFrameCtrl.mute()
+
+// ...or command method
+youTubeIFrameCtrl.command('mute')
+</pre> 
+<pre data-command="unMute" style="display: none;">
+// you can use bult in method...
+youTubeIFrameCtrl.unMute()
+
+// ...or command method
+youTubeIFrameCtrl.command('unMute')
+</pre> 
+<pre data-command="seekTo" style="display: none;">
+// use command method with arguments array
+// first element in array is time in seconds
+youTubeIFrameCtrl.command('seekTo', [10])
+</pre> 
+<pre data-command="setVolume" style="display: none;">
+// use command method with arguments array
+// first element in array is volume level (0-100)
+youTubeIFrameCtrl.command('setVolume', [10])
+</pre>
+<!-- END EXAMPLES -->
+
       </div>
     </main>
     <script src="/demo.js" type="module"></script>

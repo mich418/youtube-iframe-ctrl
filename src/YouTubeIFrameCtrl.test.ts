@@ -104,7 +104,7 @@ describe('YouTubeIFrameCtrl', () => {
 
     // Check if postMessage was called with the correct arguments
     expect(postMessageSpy).toHaveBeenCalledWith(
-      JSON.stringify({ event: 'command', func: 'playVideo', args: 'arg1,arg2' }),
+      JSON.stringify({ event: 'command', func: 'playVideo', args: ['arg1', 'arg2'] }),
       '*'
     );
 
