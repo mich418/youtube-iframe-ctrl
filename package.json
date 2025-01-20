@@ -1,12 +1,12 @@
 {
   "name": "youtube-iframe-ctrl",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple YouTube iFrame controller with no additional dependencies and no YouTube iFrame API script.",
-  "author": "mihauco <github@mihau.co> (https://mihau.co)",
+  "author": "mich418 <github@michal.dev> (https://michal.dev)",
   "funding": "https://www.buymeacoffee.com/mihauco",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mihauco/youtube-iframe-ctrl.git"
+    "url": "git+https://github.com/mich418/youtube-iframe-ctrl.git"
   },
   "keywords": [
     "youtube",

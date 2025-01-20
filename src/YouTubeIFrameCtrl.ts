@@ -99,7 +99,7 @@ export default class YouTubeIFrameCtrl {
   }
 
   private messageHandler(data: any): void {
-    const event = new CustomEvent('ytmessage', data)
+    const event = new CustomEvent('ytmessage', {detail: data})
     this.iframe.dispatchEvent(event)
   }
 
